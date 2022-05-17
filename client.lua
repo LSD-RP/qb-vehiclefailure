@@ -83,7 +83,7 @@ local function RepairVehicleFull(vehicle)
         SetVehicleDoorOpen(vehicle, 4, false, false)
     end
 	
-	QBCore.Functions.Progressbar("repair_vehicle", Lang:t("progress.repair_veh"), math.random(20000, 30000), false, true, {
+	QBCore.Functions.Progressbar("repair_vehicle", "Repairing vehicle..", math.random(20000, 30000), false, true, {
 		disableMovement = true,
 		disableCarMovement = true,
 		disableMouse = false,
@@ -94,7 +94,7 @@ local function RepairVehicleFull(vehicle)
 		flags = 16,
 	}, {}, {}, function() -- Done
 		StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_player", 1.0)
-		QBCore.Functions.Notify(Lang:t("success.repaired_veh"))
+		QBCore.Functions.Notify("Vehicle repaired!")
 		SetVehicleEngineHealth(vehicle, 1000.0)
 		SetVehicleEngineOn(vehicle, true, false)
 		SetVehicleTyreFixed(vehicle, 0)
@@ -110,7 +110,7 @@ local function RepairVehicleFull(vehicle)
 		TriggerServerEvent('qb-vehiclefailure:removeItem', "advancedrepairkit")
 	end, function() -- Cancel
 		StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_player", 1.0)
-		QBCore.Functions.Notify(Lang:t("error.failed_notification"), "error")
+		QBCore.Functions.Notify("Failed!", "error")
 		if (IsBackEngine(GetEntityModel(vehicle))) then
 			SetVehicleDoorShut(vehicle, 5, false)
 		else
@@ -261,7 +261,7 @@ end
 RegisterNetEvent('qb-vehiclefailure:client:RepairVehicle', function()
 	local vehicle = QBCore.Functions.GetClosestVehicle()
 	local engineHealth = GetVehicleEngineHealth(vehicle) --This is to prevent people from "repairing" a vehicle and setting engine health lower than what the vehicles engine health was before repairing.
-	if vehicle ~= nil and vehicle ~= 0 and engineHealth < 500 then
+	if vehicle ~= nil and vehicle ~= 0 and engineHealth < 900 then
 		local ped = PlayerPedId()
 		local pos = GetEntityCoords(ped)
 		local vehpos = GetEntityCoords(vehicle)

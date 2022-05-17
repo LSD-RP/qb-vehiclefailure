@@ -87,22 +87,22 @@ cfg = {
 				0.3,		--	1: Sedans
 				0.3,		--	2: SUVs
 				0.3,		--	3: Coupes
-				0.3,		--	4: Muscle
-				0.3,		--	5: Sports Classics
-				0.3,		--	6: Sports
-				0.3,		--	7: Super
+				0.35,		--	4: Muscle
+				0.4,		--	5: Sports Classics
+				0.4,		--	6: Sports
+				0.4,		--	7: Super
 				0.0,		--	8: Motorcycles
 				0.3,		--	9: Off-road
 				0.3,		--	10: Industrial
-				0.3,		--	11: Utility
+				0.2,		--	11: Utility
 				0.3,		--	12: Vans
 				0.3,		--	13: Cycles
 				0.3,		--	14: Boats
 				0.3,		--	15: Helicopters
 				0.3,		--	16: Planes
 				0.3,		--	17: Service
-				0.3,		--	18: Emergency
-				0.3,		--	19: Military
+				0.05,		--	18: Emergency
+				0.05,		--	19: Military
 				0.3,		--	20: Commercial
 				0.3			--	21: Trains
 	}
